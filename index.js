@@ -22,3 +22,46 @@ for (const char of dragons[0]) {
 for (const dragon of dragons) {
   dragon;
 }
+
+const randomNumber = require("random-number");
+
+function randomItem(array) {
+  const randomIndex = randomNumber({
+    min: 0,
+    max: array.length - 1,
+    integer: true,
+  });
+  return array[randomIndex];
+}
+
+const makeDragon = () => {
+  const dragonSizes = ["big", "medium", "tiny"];
+  const dragonAbilities = ["fire", "ice", "lightning"];
+  return (
+    randomItem(dragonSizes) + " " + randomItem(dragonAbilities) + " " + "dragon"
+  );
+};
+
+makeDragon();
+
+const dragonArmy = {
+  [Symbol.iterator]: () => {
+    return {
+      next: () => {
+        const enoughDragonsSpawned = Math.random() > 0.75;
+        if (!enoughDragonsSpawned)
+          return {
+            value: makeDragon(),
+            done: false,
+          };
+        return { done: true };
+      },
+    };
+  },
+};
+
+for (const dragon of dragonArmy) {
+  dragon; //? tiny time dragon, tiny lightning dragon, medium lighting dragon
+}
+
+//Iterators can also be synchronous
