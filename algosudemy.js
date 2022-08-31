@@ -41,3 +41,16 @@ console.log(`Time Elapsed: ${(t2 - t1) / 1000} seconds.`);
 // * different machines will records different times
 // * the SAME machine will record different times
 // * for fast algorithms, speed measurements may not be precise enough
+
+//if not time, then what?
+// rather than counting seconds, which are so variable, we can count the number of simple
+// operations the computer has to perform!
+
+/// Counting Operations ///
+// altAddUpTo() has 3 operations that happen: 1 multiplication, 1 addition, and 1 division
+// addUpTo() has n operations. n additions:
+// * n assignments in (total += i)
+// * n additions and  assignments in (i++)
+// * 1 assignment in (let total = 0)
+// * 1 assignment in (let i = 1)
+// * n comparisons in (i <= n)
