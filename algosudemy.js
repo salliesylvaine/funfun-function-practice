@@ -203,3 +203,31 @@ function double(arr) {
 // * The time or space complexity (as measured by Big O) depends only on the algorithm, not the hardware used
 // run the algorithm
 // * Big O Notation is everywhere, so get lots of practice!
+
+///// OBJECTS /////
+// unordered data structures with key value pairs
+
+let instructor = {
+  firstName: "Kelly",
+  isInstructor: true,
+  favoriteNumbers: [1, 2, 3, 4],
+};
+
+// when to use objects
+// * when you don't need order
+// * when you need fast access / insertion and removal
+
+/// BIG O OF OBJECTS ///
+
+// * Insertion - O(1)
+// * Removal - O(1)
+// * Searching - O(N)
+// * Access - O(1)
+//when you don't need any ordering, objects are an excellent choice!
+
+/// BIG O OF OBJECT METHODS ///
+
+// * Object.keys - O(N)
+// * Object.values - O(N)
+// * Object.entries - O(N)
+// * hasOwnProperty - O(1)
