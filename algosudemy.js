@@ -135,3 +135,71 @@ function logAtMost5(n) {
     console.log(i);
   }
 }
+
+///// SPACE COMPLEXITY /////
+
+//we can also use big O notation to analyze space complexity: how much additional
+// memory do we need to allocate in order to run the code in our algorithm?
+
+//what about the inputs?
+//auxiliary space complexity refers to space required by the algorithm, not including space taken
+// up by the inputs. (unless otherwise noted, when we talk about space complexity, we'll technically
+// be talking about auxiliary space complexity.)
+
+/// Basic Rules ///
+// * most primitives (booleans, numbers, undefined, null) are considered constant space
+// * strings require O(n) space (where n is the string length)
+// * reference types are generally O(n), where n is the length (for arrays) or the number of keys (for objects)
+
+///// EXAMPLE /////
+
+function sum(arr) {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  return total;
+}
+//there's only 2 variables declared, so no matter how long the array is, we're only dealing with those 2 constant variables.
+// therefore, this would be O(1) space!
+
+function double(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(2 * arr[i]);
+  }
+  return newArr;
+}
+//bc we're storing the length of the original arr in the newArr, this would be O(n) space.
+
+///// LOGARITHMS /////
+
+// logarithms are inverses of exponentiation (exponents)
+
+// log2(8)=3 ------> 2^3=8
+// log2(value)=exponent --------> 2^exponent=value
+
+//big picture is omitting the 2. log === log2
+
+//basically, the logarithm of a number roughly measures the number of times
+// you can divide that number by 2 before you get a value that's less than
+// or equal to one
+
+//log(8)=3 -----> 8 /2 = 4. 4/2 = 2. 2/2 = 1. divided 3 times.
+
+///// LOGARITHM COMPLEXITY /////
+
+//logarithm time complexity is great!
+//who cares?
+// * certain searching algorithms have logarithmic time complexity
+// * efficient sorting algorithms involve logarithms
+// * recursion sometimes involves logarithmic space complexity
+
+/////// RECAP ///////
+
+// * to analyze the performance of an algorithm, we use Big O Notation
+// * Big O Notation can give us a high level understanding of the time or space complexity of an algorithm
+// * Big O Notation doesn't care about precision, only about the general trends (linear? quadratic? constant?)
+// * The time or space complexity (as measured by Big O) depends only on the algorithm, not the hardware used
+// run the algorithm
+// * Big O Notation is everywhere, so get lots of practice!
