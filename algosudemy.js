@@ -273,3 +273,51 @@ let values = [true, {}, [], 2, "awesome"];
 
 // * objects are fast at everything, but there's no order
 // * arrays are great when you need order, but it's better if you can add/remove from the end
+
+///// ALGORITHMS AND PROBLEM SOLVING PATTERNS /////
+
+//what is an algorithm?
+// a process or set of steps to accomplish a certain task
+// almost everything that you do in programming involves some kind of algorithm
+// it's the foundation for being a successful problem solving and developer
+
+//how do you improve?
+// * devise a plan for solving problems
+// * master common problem solving patterns
+
+/// PROBLEM SOLVING STRATEGIES ///
+
+// * understand the problem
+// * explore concrete examples
+// * break it down
+// * solve/simplify
+// * look back and refactor
+
+/// UNDERSTANDING THE PROBLEM ///
+
+// * Can I restate the problem in my own words?
+// * What are the inputs that go into the problem?
+// * What are the outputs that should come from the solution to the problem?
+// * Can the outputs be determined from the inputs? In other words, do I have
+// enough information to solve the problem? (You may not be able to answer this
+// question until you set about solving the problem. That's okay; it's still worth
+// considering the question at this early stage.)
+// * How should I label the important pieces of data that are a part of the problem?
+
+////// EXAMPLE //////
+//Write a function which takes two numbers and returns their sum.
+
+// * Can I restate the problem in my own words?
+//implement addition
+// * What are the inputs that go into the problem?
+//- integers?
+//-floats?
+//-what about string for large numbers?
+// * What are the outputs that should come from the solution to the problem?
+//-integer? float? string?
+// * Can the outputs be determined from the inputs? In other words, do I have enough info to solve the problem?
+//yes for the most part, but what if someone only passes in one number? return null? undefined? you can clarify with interviewer
+// * How should I label the important pieces of data that are a part of the problem?
+//maybe name function "add", then num1 and num2, and answer is sum
+
+/// EXPLORING EXAMPLES ///
