@@ -231,3 +231,45 @@ let instructor = {
 // * Object.values - O(N)
 // * Object.entries - O(N)
 // * hasOwnProperty - O(1)
+
+///// ARRAYS /////
+
+// they are ordered
+let names = ["Michael", "Melissa", "Andrea"];
+let values = [true, {}, [], 2, "awesome"];
+
+//when to use arrays
+// * when you need order
+// * when you need fast access / insertion and removal (sort of)
+
+/// BIG 0 OF ARRAYS ///
+
+// * insertion - it depends
+// * removal - it depends
+// * searching - O(N)
+// * access - O(1)
+
+//insertion - if you insert a new element at the end of the array, it would be
+// big O of O(1), constant time. inserting at the beginning, however, messes up
+// the indices. we have to reindex every single element in the array, which takes time.
+// this would be O(n) time since we have to do something roughly once for every element.
+// the same goes for removing at the beginning. we have to reindex again.
+// **** push and pop are always faster than shift and unshift.
+
+// you don't need to know all of this....but...
+
+/// BIG O OF ARRAY OPERATIONS ///
+// * push - O(1) ----- adds onto end of array
+// * pop - O(1) ----- removes from end of array
+// * shift - O(N) ----- adds onto beginning of array
+// * unshift - O(N) ----- removes from beginning of array
+// * concat - O(N) ----- takes multiple arrays and merges them together
+// * slice - O(N) ----- returns a copy of part of an array
+// * splice - O(N) ----- removes and adds new elements (it's versatile)
+// * sort - O(N * log N)
+// * forEach/map/filter/reduce/etc - O(N) ----- loops/does something over each element
+
+/// Main Takeaways of Objects and Arrays ///
+
+// * objects are fast at everything, but there's no order
+// * arrays are great when you need order, but it's better if you can add/remove from the end
