@@ -425,3 +425,29 @@ function charCount(str) {
 // i: 1
 // r: 1
 // t: 1
+
+/// LOOK BACK AND REFACTOR ///
+
+// Refactoring Questions //
+// * Can you check the result?
+// (make sure the code works)
+
+// * Can you derive the result differently?
+// (can you think about different approaches?)
+
+// * Can you understand it at a glance?
+// (how intuitive is your solution?)
+
+// * Can you use the result or method for some other problem?
+// (are there any similarities between this problem and other problems you've seen in the past )
+
+// * Can you improve the performance of your solution?
+// (how to make it perform better, think time or space complexity)
+
+// * Can you think of other ways to refactor?
+// (does your code follow conventions of the language? is spacing consist? company guidelines? )
+
+// * How have other people solved this problem?
+// (often the interviewers will ask the same question. pick their brain and learn)
+
+// it's often a good idea to ask these questions out loud, to yourself or the interviewer.
