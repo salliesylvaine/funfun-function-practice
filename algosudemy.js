@@ -524,3 +524,122 @@ function isAlphaNumeric(char) {
   return true;
 }
 // it's apparently more efficient to use character codes
+
+///// HOW DO YOU IMPROVE? /////
+// * Devise a plan for solving problems
+// * Mastering common problem solving patterns
+
+/// Some pattern examples
+// * Frequency Counter
+// * Multiple pointers
+// * Sliding window
+// * divide and conquer
+// * dynamic programming
+// * greedy algorithms
+// * backtracking
+// * and many more!!!!
+
+/// FREQUENCY COUNTERS ///
+
+//This pattern uses objects or sets to collect values/frequencies of values.
+//This can often avoid the need for nested loops or O(N^2) operations with arrays/strings
+
+/// EXAMPLE
+//Write a function called same, which accepts two arrays. The function should return true if every value in the
+//array has its corresponding value squared in the second array. The frequency of values
+//must be the same.
+
+// same([1,2,3], [4,1,9]) // true
+// same([1,2,3], [1,9]) // false
+// same([1,2,1], [4,4,1]) // false (must be same frequency)
+
+//my attempt
+function same(arr1, arr2) {
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] * arr1[i] === arr2[i]) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+//not correct, [1,2,3] [9,1,4] returned false instead of true
+
+//his solution (a naive solution)
+function same(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false; //we know that if the arrays are different lengths from the get go, we're done
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    let correctIndex = arr2.indexOf(arr1[i] ** 2); //what is the index of 1 squared in array2?
+
+    if (correctIndex === -1) {
+      //an index of -1 would mean it's not in there
+      return false;
+    }
+    arr2.splice(correctIndex, 1); //remove the matching ones so you don't count something twice
+  }
+  return true; //if you make it this far without hitting false, return true
+}
+// time complexity = O(N^2)
+
+//REFACTORED SOLUTION
+function same(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false; //we know that if the arrays are different lengths from the get go, we're done
+  }
+
+  let frequencyCounter1 = {};
+  let frequencyCounter2 = {};
+  for (let val of arr1) {
+    // loops over arr, for each val in arr1, add 1 to frequencyCounter1 if it's already in there, otherwise initialize to 1
+    frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+  }
+  for (let val of arr2) {
+    frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+  }
+  for (let key in frequencyCounter1) {
+    if (!(key ** 2 in frequencyCounter2)) {
+      // is 2^2 a key in our second object?
+      return false;
+    }
+    if (frequencyCounter2[key ** 2] !== frequencyCounter1[key]) {
+      return false; //then do the values match?
+    }
+  }
+  return true;
+}
+// time complexity O(n)
+
+/// ANAGRAMS
+
+//Given two strings, write a function to determine if the second string is an anagram of the first.
+//An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema
+//formed from iceman.
+
+//his solution
+
+function validAnagram(first, second) {
+  if (first.length !== second.length) {
+    return false;
+  }
+
+  const lookup = {};
+
+  for (let i = 0; i < first.length; i++) {
+    let letter = first[i];
+    //if letter exists, increment, otherwise set to 1
+    lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
+  }
+
+  for (let i = 0; i < second.length; i++) {
+    let letter = second[i];
+    //can't find letter or letter is zero then it's not an anagram
+    if (!lookup[letter]) {
+      return false;
+    } else {
+      lookup[letter] -= 1;
+    }
+  }
+  return true;
+}
