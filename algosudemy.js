@@ -686,3 +686,39 @@ function sumZero(arr) {
 }
 //time complexity = O(n)
 //space complexity = O(1)
+
+//Implement a function called countUniqueValues, which accepts a sorted array,
+//and counts the unique values in the array. There can be negative numbers
+//in the array, but it will always be sorted.
+
+//my *incorrect* solution
+function countUniqueValues(arr) {
+  // add whatever parameters you deem necessary - good luck!
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 1; j < arr.length; j++) {
+      if (arr[j] !== arr[i]) {
+        arr[i] = arr[j];
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+//his solution (you were close!)
+function countUniqueValues(arr) {
+  var i = 0;
+
+  if (arr.length === 0) {
+    return 0;
+  }
+
+  for (var j = 1; j < arr.length; j++) {
+    if (arr[i] !== arr[j]) {
+      i++;
+      arr[i] = arr[j];
+    }
+  }
+  return i + 1;
+}
