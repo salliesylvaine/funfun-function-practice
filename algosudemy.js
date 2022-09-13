@@ -734,3 +734,47 @@ function countUniqueValues(arr) {
 //Write a function called maxSubarraySum which accepts an array of integers
 //and a number called n. The function should calculate the maximum sum of n
 //consecutive elements in the array.
+
+//naive solution
+function maxSubarraySum(arr, num) {
+  if (num > arr.length) {
+    return null;
+  }
+  var max = -Infinity; //this includes the sum if all the numbers are negative
+  for (let i = 0; i < arr.length - num + 1; i++) {
+    //this prevents us from going past the last digit
+    temp = 0;
+    for (let j = 0; j < num; j++) {
+      temp += arr[i + j];
+    }
+    if (temp > max) {
+      max = temp;
+    }
+  }
+  return max;
+}
+//time complexity O(N^2), the nested loop makes this really inefficient
+//(you can say n^2 anytime there's a nested loop)
+
+//Refactored with Sliding Window
+function maxSubarraySum(arr, num) {
+  let maxSum = 0;
+  let tempSum = 0;
+  if (arr.length < num) {
+    return null;
+  }
+
+  for (let i = 0; i < num; i++) {
+    maxSum += arr[i]; //creates the first sum
+  }
+  tempSum = maxSum; //
+  for (let i = num; i < arr.length; i++) {
+    //this starts after the initial group being added
+    tempSum = tempSum - arr[i - num] + arr[i]; //this adds the next number and subtracts the first number
+    maxSum = Math.max(maxSum, tempSum); //this is the same as our if statement in the previous function: if temp > max, max = temp
+  }
+  return maxSum;
+}
+//this creates an initial sum, and then subtracts the first number and adds the new number,
+//instead of recalculating everything we've already done. only loops over the array one time
+//time complexity O(N)
