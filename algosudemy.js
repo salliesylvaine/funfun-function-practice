@@ -611,7 +611,7 @@ function same(arr1, arr2) {
 }
 // time complexity O(n)
 
-/// ANAGRAMS
+/// ANAGRAMS ///
 
 //Given two strings, write a function to determine if the second string is an anagram of the first.
 //An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema
@@ -722,3 +722,15 @@ function countUniqueValues(arr) {
   }
   return i + 1;
 }
+
+/// SLIDING WINDOW ///
+
+//This pattern involves creating a window which can either be an array or number
+// from one position to another. Depending on a certain condition, the
+// window either increases or closes (and a new window is created).
+// Very useful for keeping track of a subset of data in an array/string etc.
+
+/// EXAMPLE ///
+//Write a function called maxSubarraySum which accepts an array of integers
+//and a number called n. The function should calculate the maximum sum of n
+//consecutive elements in the array.
