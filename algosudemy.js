@@ -778,3 +778,13 @@ function maxSubarraySum(arr, num) {
 //this creates an initial sum, and then subtracts the first number and adds the new number,
 //instead of recalculating everything we've already done. only loops over the array one time
 //time complexity O(N)
+
+/// DIVIDE AND CONQUER ///
+
+//This pattern involves diving a data set into smaller chunks and then repeating
+//a process with a subset of data.
+//This pattern can tremendously decrease time complexity
+
+/// EXAMPLE ///
+//Given a sorted array of integers, write a function called search, that accepts a value and returns the index where
+//the value passed to the function is located. If the value is not found, return -1.
