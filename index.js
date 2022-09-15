@@ -65,3 +65,29 @@ for (const dragon of dragonArmy) {
 }
 
 //Iterators can also be synchronous
+
+//
+//
+//
+//
+//
+//
+//
+//
+
+///// ASYNC / AWAIT /////
+const fetch = require("node-fetch");
+
+function fetchAvatarUrl(userId) {
+  return fetch(`https://catapp.herokuapp.com/users/${userId}`)
+    .then((response) => response.json())
+    .then((data) => data.imageUrl);
+}
+
+const result = fetchAvatarUrl(123);
+result;
+
+async function fetchAvatarUrl(userId) {
+  const response = await fetch(`https://catapp.herokuapp.com/users/${userId}`);
+  const data = await response.json();
+}
