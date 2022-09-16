@@ -818,3 +818,16 @@ function search(array, val) {
   }
   return -1;
 }
+
+///// RECURSION /////
+
+// 2 ways to solve problems: iterative and recursive
+
+// recursion is taking a problem, and doing it over and over on a smaller
+// or changing piece until you hit an endpoint, or base case.
+
+/// OBJECTIVES ///
+// * define what recursion is and how it can be used
+// * understand the two essential components of a recursive function
+// * visualize the call stack to better debug and understand recursive functions
+// * use helper method recursion and pure recursion to solve more difficult problems

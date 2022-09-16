@@ -90,4 +90,5 @@ result;
 async function fetchAvatarUrl(userId) {
   const response = await fetch(`https://catapp.herokuapp.com/users/${userId}`);
   const data = await response.json();
+  return data.imageUrl;
 }
