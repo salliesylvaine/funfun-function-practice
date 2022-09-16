@@ -831,3 +831,14 @@ function search(array, val) {
 // * understand the two essential components of a recursive function
 // * visualize the call stack to better debug and understand recursive functions
 // * use helper method recursion and pure recursion to solve more difficult problems
+
+// What is recursion?
+//A process (a function in our case) that calls itself.
+
+// Why do I care?
+//It's everywhere!
+// * JSON.parse/JSON.stringify
+// * document.getELementById and DOM traversal algos
+// * object traversal
+// * we will see it with more complex data structures
+// * it's sometimes a cleaner alternative to iteration
