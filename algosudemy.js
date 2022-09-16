@@ -858,3 +858,43 @@ function search(array, val) {
 //You're used to functions being pushed on the call stack and popped off when they
 //are done.
 //When we write recursive functions, we keep pushing new functions onto the call stack!
+
+/// How Recursive Functions Work! ///
+
+//Invoke the same function with a different input until you reach your base case
+
+/// BASE CASE
+//The condition when the recursion ends.
+//THIS IS THE MOST IMPORTANT CONCEPT TO UNDERSTAND
+
+// Two essential parts of a recursive function!
+// * Base Case
+// * Different input
+
+// Our first recursive function example
+function countDown(num) {
+  if (num <= 0) {
+    console.log("All done!");
+    return;
+  }
+  console.log(num);
+  num--;
+  countDown(num);
+}
+//countDown(3)
+//print 3
+//countDown(2);
+//print 2
+//countDown(1)
+//print 1
+//countDown(0)
+//"All done!"
+//return stops the function
+
+//Iterative version
+function countDown(num) {
+  for (var i = num; i > 0; i--) {
+    console.log(i);
+  }
+  console.log("All done!");
+}
