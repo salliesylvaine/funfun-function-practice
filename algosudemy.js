@@ -842,3 +842,19 @@ function search(array, val) {
 // * object traversal
 // * we will see it with more complex data structures
 // * it's sometimes a cleaner alternative to iteration
+
+// But first, let's talk about functions!
+// In almost all program languages, there is a built in data structure that
+// manages what happens when functions are invoked.
+
+/// THE CALL STACK ///
+// * It's a stack data structure - we'll talk about that later.
+// * Any time a function is invoked, it is placed (pushed) on the top
+//of the call stack.
+// * When JavaScript sees the return keyword or when the function ends, the compiler
+//will remove (pop)
+
+// Why do I care?
+//You're used to functions being pushed on the call stack and popped off when they
+//are done.
+//When we write recursive functions, we keep pushing new functions onto the call stack!
