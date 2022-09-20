@@ -104,5 +104,23 @@ var userFour = new User();
 
 //Let's create a User class!
 class User {
-    
+    constructor(email, name) {
+        this.email = email; //so we don't hardcode info in, we'll take the values as arguments
+        this.name = name;
+    }
 }
+//First step: create a constructor function. A constructor function constructs, or creates, our objects.
+//the constructor function will be what creates the new object when we call "new user"
+// * 'this' inside the constructor function will be the 'this' of the new object we create
+
+
+var userOne = new User('ryu@ninjas.com', 'Ryu');
+// the 'new' keyword:
+// * creates a new empty object {}
+// * sets the value of 'this' to be the new empty object
+// * calls the constructor method
+var userTwo = new User('yoshi@mariokorp.com', 'Yoshi');
+
+console.log(userOne); // User {email: 'ryu@ninjas.com', name: 'Ryu'}
+console.log(userTwo); // User {email: 'yoshi@mariokorp.com', name: 'Yoshi'}
+
