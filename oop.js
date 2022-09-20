@@ -12,3 +12,15 @@ var names = ['ryu', 'crystal', 'mario']
 2: 'mario'
 length: 3
 //if you called names.length, you would get 3
+
+///// OBJECT LITERALS /////
+
+var userOne = {
+    email: 'ryu@ninjas.com',
+    name: 'Ryu',
+};
+
+//What we're doing is ENCAPSULATION, we're capturing everything to do with
+//the user, and we're containing it in one piece, or object. We're encapsulating 
+//what it means to be this user inside an object. Now, any properties and methods that
+//describe what it is to be this user will live inside this object.
