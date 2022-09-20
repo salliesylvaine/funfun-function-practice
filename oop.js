@@ -164,3 +164,29 @@ userOne.login().updateScore().updateScore().logout();
 //        ryu@ninjas.com score is now 1
 //        ryu@ninjas.com score is now 2
 //        ryu@ninjas.com just logged out
+
+///// CLASS INHERITANCE /////
+
+// Say we have users, and they all have the User class methods and properties.
+// But we may also want admins that still have the properties and methods of regular users, but with extra methods
+// like 'delete user'; so we should create a new Admin class, but the problem is we want all the regular user stuff inside that as well.
+
+// We can use CLASS INHERITANCE //
+class Admin extends User { //this gives admin access to User properties/methods when creating a new Admin
+    //if we don't have a constructor in the class that extends, it will just use the one from User
+    deleteUser(user){
+        users = users.filter(u => { //u is the individual user
+            return u.email != user.email //if the email doesn't match with the user we've passed in to delete, then it stays in the array 
+            //if it is false (which means the emails match), it's filtered out of the array, or "deleted"
+        }) // allows us to cycle through each element inside the array and filter one or more out of the array
+    }
+
+}
+
+var users = [userOne, userTwo]
+
+var admin = new Admin('shaun@ninjas.com', 'Shaun')
+
+admin.deleteUser(userTwo);
+
+console.log(users); // output: User {email: "ryu@ninjas.com", name: "Ryu", score: 0}
