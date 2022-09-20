@@ -203,9 +203,9 @@ function User(email, name) {
     this.email = email;
     this.name = name;
     this.online = false;
-    this.login = function(){
-        console.log(this.email, 'has logged in')
-    }
+    // this.login = function(){
+    //     console.log(this.email, 'has logged in')
+    // }
 }
 
 var userOne = new User('ryu@ninjas.com', 'Ryu');
@@ -213,3 +213,27 @@ var userTwo = new User('yoshi@mariokorp.com', 'Yoshi');
 
 console.log(userOne); // output: User {email: 'ryu@ninjas.com', name: 'Ryu', online: false}
 userTwo.login(); //output: yoshi@mariokorp.com has logged in
+
+///// PROTOTYPE /////
+
+var nums = [1,2,3,4,5]
+
+//JS automatically proxies all methods under __proto__ property up onto the object itself. (check console.logs to see the __proto__ )
+
+//Every object type has a prototype. This prototype is like a map for that object type.
+// the __proto__ property points to the methods that get shared with the object type. 
+
+User.prototype.login = function(){
+    this.online = true;
+    console.log(this.email, 'has logged in')
+}
+
+//bc the __proto__ property of the users will point to the User prototype, 
+//the login function will now be in the __proto__ property
+
+User.prototype.logout = function(){
+    this.online = false;
+    console.log(this.email, 'has logged out')
+}
+
+
