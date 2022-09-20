@@ -107,12 +107,20 @@ class User {
     constructor(email, name) {
         this.email = email; //so we don't hardcode info in, we'll take the values as arguments
         this.name = name;
+        this.score = 0;//not passed in as param bc all scores default to 0
     } //constructor function is just for object properties
     login(){
         console.log(this.email, 'just logged in')
+        return this;
     }
     logout(){
         console.log(this.email, 'just logged out')
+        return this;
+    }
+    updateScore(){
+        this.score++;
+        console.log(this.email, 'score is now', this.score)
+        return this; //returning that instance of the object (that particular user)
     }
 }
 //First step: create a constructor function. A constructor function constructs, or creates, our objects.
@@ -135,3 +143,24 @@ userOne.login(); // output: ryu@ninjas.com just logged in
 userTwo.logout();// output: yoshi@mariokorp.com just logged out
 
 //With this, we're ENCAPSULATING everything it means to be a user inside this class
+
+///// METHOD CHAINING /////
+
+userOne.login().logout(); //this is called method chaining, and it won't work as is. 
+//the output would be an error: cannot read properties of undefined. bc userOne.login() as a value is undefined
+
+userOne.updateScore(); //output: ryu@ninjas.com score is now 1
+userOne.updateScore(); //output: ryu@ninjas.com score is now 2
+userOne.updateScore(); //output: ryu@ninjas.com score is now 3
+
+userTwo.updateScore(); //output: yoshi@mariokorp.com score is now 1
+
+// We don't want to return an undefined value every time we call a method, we want to return the instance of that object
+// The instance of the object is stored in 'this'
+// Since we've added 'return this' to the methods in our User class, we should now be able to method chain
+
+userOne.login().updateScore().updateScore().logout();
+//output: ryu@ninjas.com just logged in
+//        ryu@ninjas.com score is now 1
+//        ryu@ninjas.com score is now 2
+//        ryu@ninjas.com just logged out
