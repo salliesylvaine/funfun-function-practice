@@ -94,4 +94,15 @@ var userThree = {
 //JavaScript doesn't technically have classes built into it. But ES6 released class syntactical sugar that emulates the idea of classes in JS
 var userFour = new User();
 
-//Classes in JS are like blueprints
+//Classes in JS are like blueprints that describe a particular object in a nonspecific way
+
+//Car Class has a color property
+//Each child Car has a color property inherited from Car with their own specific color
+
+//the child classes are different INSTANCES of the parent classes, meaning they have the same
+//properties, but their own values for those properties that are unique to them
+
+//Let's create a User class!
+class User {
+    
+}
