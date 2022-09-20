@@ -107,6 +107,12 @@ class User {
     constructor(email, name) {
         this.email = email; //so we don't hardcode info in, we'll take the values as arguments
         this.name = name;
+    } //constructor function is just for object properties
+    login(){
+        console.log(this.email, 'just logged in')
+    }
+    logout(){
+        console.log(this.email, 'just logged out')
     }
 }
 //First step: create a constructor function. A constructor function constructs, or creates, our objects.
@@ -115,12 +121,17 @@ class User {
 
 
 var userOne = new User('ryu@ninjas.com', 'Ryu');
+var userTwo = new User('yoshi@mariokorp.com', 'Yoshi');
 // the 'new' keyword:
 // * creates a new empty object {}
 // * sets the value of 'this' to be the new empty object
 // * calls the constructor method
-var userTwo = new User('yoshi@mariokorp.com', 'Yoshi');
+
 
 console.log(userOne); // User {email: 'ryu@ninjas.com', name: 'Ryu'}
 console.log(userTwo); // User {email: 'yoshi@mariokorp.com', name: 'Yoshi'}
 
+userOne.login(); // output: ryu@ninjas.com just logged in
+userTwo.logout();// output: yoshi@mariokorp.com just logged out
+
+//With this, we're ENCAPSULATING everything it means to be a user inside this class
