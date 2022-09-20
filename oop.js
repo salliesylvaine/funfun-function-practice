@@ -190,3 +190,26 @@ var admin = new Admin('shaun@ninjas.com', 'Shaun')
 admin.deleteUser(userTwo);
 
 console.log(users); // output: User {email: "ryu@ninjas.com", name: "Ryu", score: 0}
+
+///// CONSTRUCTORS (UNDER THE HOOD) /////
+
+// ES6 classes are just syntactic sugar built upon the JavaScript Prototype model.
+// JavaScript as a language doesn't really have classes. These are pretend classes in a sense. 
+// Classes are just a thin layer of ABSTRACTION built on top of the JavaScript prototype model.
+
+// Let's create a constructor function
+
+function User(email, name) {
+    this.email = email;
+    this.name = name;
+    this.online = false;
+    this.login = function(){
+        console.log(this.email, 'has logged in')
+    }
+}
+
+var userOne = new User('ryu@ninjas.com', 'Ryu');
+var userTwo = new User('yoshi@mariokorp.com', 'Yoshi');
+
+console.log(userOne); // output: User {email: 'ryu@ninjas.com', name: 'Ryu', online: false}
+userTwo.login(); //output: yoshi@mariokorp.com has logged in
