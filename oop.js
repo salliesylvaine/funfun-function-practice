@@ -18,9 +18,20 @@ length: 3
 var userOne = {
     email: 'ryu@ninjas.com',
     name: 'Ryu',
+    // login: function(){}
+    login(){ //ES6 lets you bypass the function keyword
+        console.log(this.email, 'has logged in') // 'this' refers to the object when it's in said object
+    },
+    logout(){
+        console.log(this.email, 'has logged out')
+    }
 };
+this //when outside of an object, 'this' refers to the window object, or global object
 
 //What we're doing is ENCAPSULATION, we're capturing everything to do with
 //the user, and we're containing it in one piece, or object. We're encapsulating 
 //what it means to be this user inside an object. Now, any properties and methods that
 //describe what it is to be this user will live inside this object.
+
+console.log(userOne.name); // 'Ryu'
+console.log(userOne.login()); // 'ryu@ninjas.com has logged in'
