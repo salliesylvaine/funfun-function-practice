@@ -898,3 +898,15 @@ function countDown(num) {
   }
   console.log("All done!");
 }
+
+// Our second recursive function example
+function sumRange(num) {
+  if (num === 1) {
+    //base case
+    return 1;
+  }
+  return num + sumRange(num - 1); //recursive call
+}
+
+//ex: sumRange(3)
+//return 3 + sumRange(2)
