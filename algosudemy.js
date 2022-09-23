@@ -914,3 +914,12 @@ function sumRange(num) {
 //////////////////////////return 1;
 
 //this returns 6 bc 3 + 2 + 1 = 6
+
+//factorial iterative solution
+function factorial(num) {
+  let total = 1;
+  for (let i = num; i > 1; i--) {
+    total *= i;
+  }
+  return total;
+}
