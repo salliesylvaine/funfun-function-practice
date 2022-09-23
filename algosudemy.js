@@ -910,3 +910,7 @@ function sumRange(num) {
 
 //ex: sumRange(3)
 //return 3 + sumRange(2)
+///////////// return 2 + sumRange(1)
+//////////////////////////return 1;
+
+//this returns 6 bc 3 + 2 + 1 = 6
