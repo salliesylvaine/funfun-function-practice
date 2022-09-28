@@ -936,3 +936,42 @@ function factorial(num) {
 // * no base case, or base case is wrong
 // * forgetting to return or returning the wrong thing
 // * stack overflow!
+
+///// HELPER METHOD RECURSION /////
+
+//a pattern where we have an outer function that's not recursive which calls an inner function that is recursive
+
+function outer(input) {
+  var outerScopedVariable = [];
+
+  function helper(helperInput) {
+    //modify the outerScoperVariable
+    helper(helperInput--);
+  }
+  helper(input);
+
+  return outerScopedVariable;
+}
+//done when we need to compile an array or list of data.
+
+//EXAMPLE//
+
+function collectOddValues(arr) {
+  let result = []; //if this was a regular recursive function, anytime the function ran, the array would be reset to empty, so we couldn't store our data there.
+
+  function helper(helperInput) {
+    //pass in the array
+    if (helperInput.length === 0) {
+      //base case
+      return;
+    }
+    if (helperInput[0] % 2 !== 0) {
+      //if it's not divisible by 2, it's odd, push into result
+      result.push(helperInput[0]);
+    }
+    helper(helperInput.slice(1)); // makes smaller array without first element
+  }
+  helper(arr);
+
+  return result;
+}
