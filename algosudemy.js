@@ -931,3 +931,8 @@ function factorial(num) {
   }
   return num * factorial(num - 1);
 }
+
+/// PITFALLS OF RECURSIVE SOLUTIONS ///
+// * no base case, or base case is wrong
+// * forgetting to return or returning the wrong thing
+// * stack overflow!
