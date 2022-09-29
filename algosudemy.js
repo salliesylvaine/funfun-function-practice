@@ -1109,3 +1109,29 @@ function reverse(str) {
   if (str.length <= 1) return str;
   return reverse(str.slice(1)) + str[0];
 }
+
+///// SEARCHING ALGORITHMS /////
+
+/// OBJECTIVES ///
+// * describe what a searching algorithm is
+// * implement linear search on arrays
+// * implement binary search on sorted arrays
+// * implement a naive string searching algorithm
+// * implement the KMP string searching algorithm
+
+/// LINEAR SEARCH ///
+
+//How do we search?
+
+//given an array, the simplest way to search for a value is to
+//look at every element in the array and check if it's the value we want.
+// congrats! that's linear search.
+
+// JavaScript has search!
+// There are many different search methods on arrays in JavaScript:
+// * indexOf
+// * includes
+// * find
+// * findIndex
+
+//But how do these functions work?
