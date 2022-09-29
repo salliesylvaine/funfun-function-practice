@@ -1135,3 +1135,4 @@ function reverse(str) {
 // * findIndex
 
 //But how do these functions work?
+// they're doing linear search
