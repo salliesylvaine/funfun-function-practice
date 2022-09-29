@@ -1047,3 +1047,65 @@ function factorial(num) {
   }
   return num * factorial(num - 1);
 }
+
+//productOfArray - my answer (correct, with looking at example)
+function productOfArray(arr) {
+  let answer = 1;
+
+  function helper(helperArr) {
+    if (helperArr.length === 0) {
+      return;
+    }
+    answer = answer * helperArr[0];
+
+    helper(helperArr.slice(1));
+  }
+
+  helper(arr);
+
+  return answer;
+}
+
+//recursiveRange - my answer (correct!!!!)
+function recursiveRange(num) {
+  let answer = num;
+
+  if (num === 0) {
+    return answer;
+  }
+
+  answer = answer + recursiveRange(num - 1);
+  return answer;
+}
+
+// fibonacci - didn't answer, so the solution
+function fib(n) {
+  if (n <= 2) return 1;
+  return fib(n - 1) + fib(n - 2);
+}
+
+///CHALLENGING RECURSIVE PRACTICE ///
+
+//reverse - my solution (incorrect)
+function reverse(str) {
+  // add whatever parameters you deem necessary - good luck!
+  let arr = str.split();
+
+  let answer = [];
+
+  if (arr.length === 0) {
+    return answer.toString();
+  }
+
+  answer.push(arr[arr.length]);
+
+  arr.slice(1);
+
+  return reverse(answer.toString());
+}
+
+//correct solution
+function reverse(str) {
+  if (str.length <= 1) return str;
+  return reverse(str.slice(1)) + str[0];
+}
