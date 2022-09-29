@@ -1016,3 +1016,34 @@ function collectOddValues(arr) {
 // * Remember that strings are immutable so you will need to use methods
 // like slice, substr, or substring to make copies of strings
 // * To make copies of objects use Object.assign, or the spread operator
+
+/// RECURSION PRACTICE ///
+
+// my answer (incorrect)
+function power(base, exp) {
+  let answer;
+  if (exp === 0) {
+    return 1;
+  }
+
+  for (let i = exp; i > 0; i--) {
+    answer = base * base;
+    power(answer, exp);
+  }
+
+  return answer;
+}
+
+//correct answer
+function power(base, exponent) {
+  if (exponent === 0) return 1;
+  return base * power(base, exponent - 1);
+}
+
+//factorial - my answer (CORRECT!!)
+function factorial(num) {
+  if (num === 0) {
+    return 1;
+  }
+  return num * factorial(num - 1);
+}
