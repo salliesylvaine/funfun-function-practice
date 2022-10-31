@@ -1152,15 +1152,10 @@ function linearSearch(arr, val) {
 }
 //Big O - O(n)
 
-//for the commit
-function x() {
-  return y;
-}
+// How linear search performs
 
-//for the commit again
-function sal {
-  return weston
-}
+// O(1) - Best case
+// O(n) - Average case
+// O(n) - Worst case
 
-//committttttttt
-//commit
+/// INTRO TO BINARY SEARCH ///
