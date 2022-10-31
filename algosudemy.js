@@ -1159,3 +1159,18 @@ function linearSearch(arr, val) {
 // O(n) - Worst case
 
 /// INTRO TO BINARY SEARCH ///
+
+// * binary search is a much faster form of search
+// * rather than eliminating one element at a time, you can eliminate HALF of the remaining elements at a time
+// * binary search only works on SORTED arrays
+
+/// Divide and Conquer ///
+
+// Let's search for 15:
+[1, 3, 4, 6, 8, 9, 11, 12, 15, 16, 17, 18, 19];
+//left (1)        too small (11)           right (19)
+[1, 3, 4, 6, 8, 9, 11, 12, 15, 16, 17, 18, 19];
+//               left (12)    too big (17)  right (19)
+[1, 3, 4, 6, 8, 9, 11, 12, 15, 16, 17, 18, 19];
+//            left (12)  middle (15) right (16)
+//this only took 3 guesses
