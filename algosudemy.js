@@ -1209,3 +1209,8 @@ function binarySearch(arr, elem) {
 }
 
 binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 15);
+
+/// Big O for Binary Search ///
+
+// Worst Case - O(log n)
+// Best Case - O(1)
