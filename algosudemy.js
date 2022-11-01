@@ -1212,5 +1212,19 @@ binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 15);
 
 /// Big O for Binary Search ///
 
-// Worst Case - O(log n)
+// Worst Case - O(log n) (still really good)
 // Best Case - O(1)
+
+/// NAIVE STRING SEARCH ///
+// * suppose you want to count the number of times a smaller
+// string appears in a longer string
+// * a straightforward approach involves checking pairs of characters
+// individually
+
+/// Pseudocode ///
+// * loop over the longer string
+// * loop over the shorter string (nested loop inside the longer string loop)
+// * if the characters don't match, break out of the inner loop
+// * if you complete the inner loop and find a match, increment
+// the count of matches
+// * return the count
