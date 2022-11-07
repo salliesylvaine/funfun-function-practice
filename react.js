@@ -22,3 +22,13 @@
 // then react finds the best way to manipulate the DOM. In essence, we declare what the state should be like, and then just make changes
 // based on state.
 // less complexity, better code quality, faster developer times
+
+/// The Job of a React Developer ///
+
+// 1. Decide on Components
+// 2. Decide the State and where it lives
+// 3. What changes when state changes
+
+/// Classes vs Hooks ///
+
+// Tells react when you want it to render and re-render different parts of your website

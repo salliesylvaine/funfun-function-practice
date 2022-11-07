@@ -1245,3 +1245,45 @@ function naiveSearch(long, short) {
 }
 
 naiveSearch("lorie loled", "lol");
+
+///// ELEMENTARY SORTING ALGORITHMS /////
+
+/// What is sorting? ///
+
+// Sorting is the process of rearranging the items in a collection
+// (eg. an array) so that the items are in some kind of order.
+//    Ex:
+//      - sorting numbers from smallest to largest
+//      - sorting names alphabetically
+//      - sorting movies based on release year
+//      - sorting movies based on revenue
+
+/// Why do we need to learn this? ///
+
+// Sorting is an incredibly common task, so it's good to know how it works
+// There are many different ways to sort things, and different techniques have their own
+//advantages and disadvantages
+
+/// JavaScript Sort Method ///
+
+// The JavaScript sort method works, but not in the way you expect.
+
+// EX:
+["steele", "colt", "data structures", "algorithms"].sort();
+// ['algorithms', 'colt', 'data structures', 'steele']
+
+[6, 4, 15, 10].sort();
+// [10, 15, 4, 6]
+
+// According to docs, the default sort order is according to string Unicode
+// code points.
+
+/// Telling JavaScript how to sort ///
+
+// The built-in sort method accepts an optional comparator function
+// You can use this comparator function to tell JavaScript how you want it to sort
+// The comparator looks at pairs of elements (a and b), determines their sort order
+// based on the return value
+//      If it returns a negative number, a should come before b
+//      If it returns a positive number, a should come after b.
+//      If it returns 0, a and b are the same as far as the sort is concerned
