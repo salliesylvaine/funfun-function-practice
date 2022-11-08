@@ -43,3 +43,5 @@ console.log(sum);
 // by passing in a callback function, we're telling it to call the callback when
 // we get the response we were hoping for sometime in the future.
 // this allows us to complete the same actions in half the time.
+
+// Node.js' package ecosystem, npm, is the largest ecosystem for open source libraries in the world.
