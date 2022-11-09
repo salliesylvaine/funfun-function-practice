@@ -62,3 +62,21 @@
     Change Name
   </button>
 </header>;
+
+///// REACT/JAVASCRIPT CONCEPTS OVERVIEW /////
+
+/// ARRAY METHODS ///
+
+//methods you can call on any array that will perform some kind of action on or with that array
+
+map();
+// goes through each element of an array and does something (whatever you tell it to) to each element,
+// returning a new array.
+
+filter();
+
+reduce();
+
+find();
+
+includes();
