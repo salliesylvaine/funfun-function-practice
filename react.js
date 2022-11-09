@@ -80,3 +80,22 @@ reduce();
 find();
 
 includes();
+
+///// PROMISES /////
+const myPromise = new Promise((resolve, reject) => {
+  //resolve is when API is successful, reject is when API call gives an error
+  //the promise will be pending until the resolve or reject has been called
+  if (true) {
+    setTimeout(() => {
+      resolve("I have succeeded");
+    }, 1000); //wants setTimeout to run in 1000 milliseconds
+  } else {
+    reject("I have failed");
+  }
+});
+
+myPromise
+  .then((value) => {
+    console.log(value);
+  })
+  .catch((rejectValue) => console.log(rejectValue));
