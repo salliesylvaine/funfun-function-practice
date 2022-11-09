@@ -32,3 +32,33 @@
 /// Classes vs Hooks ///
 
 // Tells react when you want it to render and re-render different parts of your website
+
+////// Monsters Roledex Notes //////
+<header className="App-header">
+  <img src={logo} className="App-logo" alt="logo" />
+  <p>
+    Hi {this.state.name.firstName} {this.state.name.lastName}, I work at{" "}
+    {this.state.company}
+  </p>
+  <button
+    onClick={() => {
+      this.setState(
+        (state, props) => {
+          return {
+            name: { firstName: "Yihua", lastName: "Zhang" },
+          };
+        },
+        () => {
+          console.log(this.state); //this runs only after the above state is updated
+        }
+      );
+
+      // this.setState({
+      //   name: { firstName: "Yihua", lastName: "Zhang" },
+      // }); //this is asynchronous
+      // console.log(this.state) //this is synchronous, so it may not show the changes in state yet bc they may not have happened yet
+    }}
+  >
+    Change Name
+  </button>
+</header>;

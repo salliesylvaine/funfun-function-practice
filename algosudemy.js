@@ -1287,3 +1287,62 @@ naiveSearch("lorie loled", "lol");
 //      If it returns a negative number, a should come before b
 //      If it returns a positive number, a should come after b.
 //      If it returns 0, a and b are the same as far as the sort is concerned
+
+//EX:
+function numberCompare(num1, num2) {
+  return num1 - num2;
+}
+
+[6, 4, 15, 10].sort(numberCompare);
+// [4, 6, 10, 15]
+
+function compareByLen(str1, str2) {
+  return str1.length - str2.length;
+}
+
+["Steele", "Colt", "Data Structures", "Algorithms"].sort(compareByLen);
+
+/// BUBBLE SORT ///
+
+// A sorting algorithm where the largest values bubble up to the top!
+// Basically, you compare an item to the item next to it. If the item next to it is larger, you swap them.
+// the largest items "bubble" to the top.
+
+// Before we sort, we must swap!
+// Many sorting algorithms involve some type of swapping functionality (e.g. swapping to
+// numbers to put them in order)
+
+// EX: (ES5)
+function swap(arr, idx1, idx2) {
+  var temp = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = temp;
+}
+// (ES2015)
+const swap = (arr, idx1, idx2) => {
+  [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+};
+
+/// BubbleSort Pseudocode ///
+// * Start looping with a variable called i from the end of the array
+// towards the beginning
+// * Start an inner loop with a variable called j from the beginning until i - 1
+// * If arr[j] is greater than arr [j + 1], swap those two values!
+// * Return the sorted array
+
+// NAIVE SOLUTION
+function bubbleSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[j] > arr[j + 1]) {
+        // SWAP!
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+bubbleSort([37, 45, 29, 8]);
