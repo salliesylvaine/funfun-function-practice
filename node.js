@@ -45,3 +45,36 @@ console.log(sum);
 // this allows us to complete the same actions in half the time.
 
 // Node.js' package ecosystem, npm, is the largest ecosystem for open source libraries in the world.
+
+///// APP.JS NOTES/CHALLENGES /////
+
+// const fs = require("fs");
+
+// // fs.writeFileSync("notes.txt", "My name is Sallie.");
+
+// fs.appendFileSync("notes.txt", " This is an appended message.");
+
+// // Challenge: Append a message to notes.txt
+// //
+// // 1. Use appendFileSync to append the file
+// // 2. Run the script
+// // 3. Check your work by opening the file and viewing the appended text
+
+// const add = require("./utils.js");
+
+// const sum = add(4, -2);
+// console.log(sum);
+
+//
+// Challenge: Define and use a function in a new files
+//
+// 1. Create a new file called called notes.js
+// 2. Create getNotes function that returns "Your notes..."
+// 3. Export getNotes function
+// 4. From app.js, load in and call the function printing message to console
+
+const getNotes = require("./notes");
+
+const notes = getNotes();
+
+console.log(notes);
