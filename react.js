@@ -82,6 +82,8 @@ reduce();
 find();
 
 includes();
+// returns a true/false value based on the arguments you pass in.
+// i.e. if array includes the argument, it returns true. otherwise false.
 
 ///// PROMISES /////
 const myPromise = new Promise((resolve, reject) => {
