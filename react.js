@@ -74,6 +74,8 @@ map();
 // returning a new array.
 
 filter();
+// filters out elements in the array based on the function that you pass it.
+// returns a new array
 
 reduce();
 
