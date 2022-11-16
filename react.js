@@ -103,3 +103,70 @@ myPromise
     console.log(value);
   })
   .catch((rejectValue) => console.log(rejectValue));
+
+///// MONSTER ROLODEX NOTES /////
+class App extends Component {
+  constructor() {
+    // 1. classes always run constructor function first (it initializes state)
+    super();
+
+    this.state = {
+      monsters: [],
+      searchField: "",
+    };
+    console.log("constructor");
+  }
+
+  componentDidMount() {
+    // 3. runs as soon as component is mounted
+    console.log("componentDidMount");
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) =>
+        this.setState(
+          () => {
+            return { monsters: users };
+          }, //when state changes, the component will re-render, repeating step 2
+          () => {
+            console.log(this.state);
+          }
+        )
+      );
+  } // mounting is when react first renders the component to the DOM
+
+  render() {
+    // 2. render determines what to show (dictates what UI is going to be), mounts component
+    console.log("render");
+
+    const filteredMonsters = this.state.monsters.filter((monster) => {
+      return monster.name.toLocaleLowerCase().includes(this.state.searchField);
+    });
+    return (
+      <div className="App">
+        <input
+          className="search-box"
+          type="search"
+          placeholder="search monsters"
+          onChange={(event) => {
+            //bc this is an anon function not stored in a variable, it is initialized when the render method runs, and is deleted once it's done running.
+            // so, it gets recreated every single time render runs, meaning there's nowhere in memory keeping track of the function
+            const searchField = event.target.value.toLocaleLowerCase();
+
+            this.setState(() => {
+              return { searchField };
+            });
+          }}
+        />
+        {filteredMonsters.map((monster) => {
+          return (
+            <div key={monster.id}>
+              <h1>{monster.name}</h1>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+}
+
+export default App;
