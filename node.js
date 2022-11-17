@@ -78,3 +78,32 @@ const getNotes = require("./notes");
 const notes = getNotes();
 
 console.log(notes);
+
+///// CHALK AND YARGS NOTES /////
+// const notes = getNotes();
+
+// console.log(notes);
+
+// console.log(chalk.green("Success!"));
+
+// console.log(chalk.bgMagenta("Magenta"));
+
+// console.log(chalk.bgBlueBright("Test"));
+
+// const error = chalk.inverse.bgMagenta;
+
+// console.log(error("you failed"));
+
+// console.log(chalk.blue.bold("Hello world!"));
+
+// console.log(process.argv[2]);
+
+// const command = process.argv[2];
+
+// console.log(process.argv);
+
+// if (command === "add") {
+//   console.log("Adding note!");
+// } else if (command === "remove") {
+//   console.log("Removing note!");
+// }
