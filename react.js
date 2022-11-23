@@ -170,3 +170,26 @@ class App extends Component {
 }
 
 export default App;
+
+///// COMPONENT LIFECYCLES /////
+
+// Mounting :
+//    constructor, render, react updates DOM and refs
+//    componentDidMount
+
+// Updating :
+//    render (new props, setState(), forceUpdate()*this is there if you need it, but you should rely on react and not try to force an update)
+//    react updates DOM and refs
+//    componentDidUpdate
+
+// Unmounting :
+//    componentWillUnmount
+
+// ** These are unique to class components, functional components don't have these lifecycle methods,
+//  but they do still follow these same 3 phases of components. You just don't interact with them.
+
+/// Render Phase : Pure and has no side effects. May be paused, aborted, or restarted by React.
+//    constructor, render (new props, setState(), forceUpdate())
+
+/// Commit Phase : Can work with DOM, run side effects, schedule updates.
+//    react updates DOM and refs, componentDidMount, componentDidUpdate, componentWillUnmount
