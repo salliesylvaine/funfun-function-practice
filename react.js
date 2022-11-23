@@ -171,7 +171,7 @@ class App extends Component {
 
 export default App;
 
-///// COMPONENT LIFECYCLES /////
+///// CLASS COMPONENT LIFECYCLES /////
 
 // Mounting :
 //    constructor, render, react updates DOM and refs
@@ -193,3 +193,35 @@ export default App;
 
 /// Commit Phase : Can work with DOM, run side effects, schedule updates.
 //    react updates DOM and refs, componentDidMount, componentDidUpdate, componentWillUnmount
+
+///// FUNCTIONAL COMPONENTS LIFECYCLE /////
+
+/// Pure Functions ///
+
+const pureFunc = (a, b) => {
+  return a + b;
+};
+// pure functions always return exactly what is given to them in params.
+// in other words, a function is considered pure when everything that dictates what it returns is completely isolated
+// from what gets passed into it.
+
+/// Impure Functions ///
+let c = 3;
+
+const funcA = (a, b) => {
+  return a + b + c;
+};
+
+// if c changes, funcA will return a different answer since it's dependent on an outside variable
+// this is an impure function
+
+/// Side Effects ///
+c = 3;
+
+const funcB = (a, b) => {
+  c = a + b;
+
+  return a * b;
+};
+// a side effect is when a function creates some kind of effect OUTSIDE of its scope.
+// in this example, it's changing the value of c, which is outside funcB's scope
