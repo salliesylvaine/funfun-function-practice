@@ -107,3 +107,51 @@ console.log(notes);
 // } else if (command === "remove") {
 //   console.log("Removing note!");
 // }
+
+/// JSON NOTES ///
+const fs = require("fs");
+
+// const book = {
+//   title: "Ego is the Enemy",
+//   author: "Ryan Holiday",
+// };
+
+// const bookJSON = JSON.stringify(book);
+// fs.writeFileSync("1-json.json", bookJSON);
+
+// const dataBuffer = fs.readFileSync("1-json.json"); //read the file in, getting out binary data
+// const dataJSON = dataBuffer.toString(); //converted data into standard string in javascript
+// const data = JSON.parse(dataJSON); //parsed JSON data into an object
+// console.log(data.title); //accessed a property from it
+
+//
+// Challenge: Work with JSON and the file system
+//
+// 1. Load and parse the JSON data
+// 2. Change the name and age property using your info
+// 3. Stringify the changed object and overwrite the original data
+// 4. Test your work by viewing data in the JSON file
+
+//my attempt
+// const loadData = fs.readFileSync("1-json.json");
+
+// const dataJSON = loadData.toString();
+
+// const parseData = dataJSON.parse(dataJSON);
+
+// const change = parseData.name;
+
+// fs.writeFileSync("1-json.json");
+
+//solution
+
+const dataBuffer = fs.readFileSync("1-JSON.json"); // loaded data in
+
+const dataJSON = dataBuffer.toString();
+const user = JSON.parse(dataJSON); // parsed data
+
+user.name = "Sallie";
+user.age = 28;
+
+const userJSON = JSON.stringify(user);
+fs.writeFileSync("1-json.json", userJSON);
