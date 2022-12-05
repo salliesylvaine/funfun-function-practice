@@ -225,3 +225,13 @@ const funcB = (a, b) => {
 };
 // a side effect is when a function creates some kind of effect OUTSIDE of its scope.
 // in this example, it's changing the value of c, which is outside funcB's scope
+
+/// REACT VS REACT-DOM ///
+
+// React library is the engine. It does a lot of the diffing, optimizations, determining what to render
+// and how.
+// React DOM determines what we're trying to render to, and it renders to the DOM.
+// * React Native builds Native elements *
+// There could be React VR, but essentially there's different ways you might be building specific UI for some device or platform.
+// We use React DOM to render specifically to browsers.
+// All of these use React under the hood.
